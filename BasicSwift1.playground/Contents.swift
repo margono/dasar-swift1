@@ -1,7 +1,7 @@
 import UIKit
 
 /* ---------- VARIABLE, CONSTANT ---------- */
-var age : Int = 17 //ulang tahun tahun depan maka age kita ganti dengan 18
+var age : Int = 17 //next year birthday, we change the age to 18
 age = 18
 
 let pi : Float = 3.14
@@ -18,21 +18,21 @@ let fullName = "\(firstName) \(lastName)"
 
 /*
     2. Multiline Comment
-    mulitine line comment menggunakan /**/
+    mulitine line comment using /**/
  */
 
 
-/* ---------- menampilkan value pi ke console dengan perintah print ---------- */
+/* ---------- display the pi value to the console with the print command ---------- */
 print("\(pi)")
 
 /* ---------- tuples ----------*/
 var person : (String, Int, String) = ("arenasharing.com", 1, "Jakarta")
-// cara mengakses datanya
+// how to access data
 print(person.0)
 
 /*---------- TYPE SAFE ---------- */
 var length = 17
-//length = "Tujuh belas" // ini akan error
+//length = "Seventeen" // This code will return an error
 
 
 /*---------- TYPE ALIAS ---------- */
@@ -45,22 +45,22 @@ var phoneNumber : String?
 if phoneNumber != nil {
     print(phoneNumber)
 } else {
-    print("phone number tidak ada")
+    print("phone number is empty")
 }
 
-// tanpa unwrapping akan menghasilkan Optional("081234567890")
+// without unwrapping, it will produce optional("081234567890") value
 phoneNumber = "081234567890"
 if phoneNumber != nil {
     print(phoneNumber)
 } else {
-    print("phone number tidak ada")
+    print("phone number is empty")
 }
 
-//Force unwrapping akan menghasilkan 081234567890
+//Force unwrapping will produce 081234567890
 if(phoneNumber != nil){
     print("force unwrapping = \(phoneNumber!)")
 } else {
-    print("phonenumber tidak ada")
+    print("phonenumber is empty")
 }
 
 //Optional binding
@@ -70,7 +70,7 @@ if let phone = phoneNumber {
 phoneNumber = nil
 func checkPhonenumber() {
     guard let phone = phoneNumber else {
-        print("guard let phoneNumber kosong")
+        print("guard let phoneNumber is empty")
         return
     }
     
@@ -81,26 +81,37 @@ checkPhonenumber()
 
 
 /*---------- ARITHMETIC OPERATOR---------- */
-let angka1 = 6
-let angka2 = 2
-let hasil = 6 + 2
-print("hasil = \(hasil)")
+let number1 = 6
+let number2 = 2
+let result = 6 + 2
+print("result = \(result)")
 
 
 /*---------- COMPARISON OPERATOR---------- */
-if(angka1 == angka2) {
-    print("bilangan sama")
+if(number1 == number2) {
+    print("number same")
 } else {
-    print("bilangan tidak sama")
+    print("number not same")
 }
 
 
 /*---------- LOGICAL OPERATOR---------- */
-let angka3 = 10
-let angka4 = 6
+let number3 = 10
+let number4 = 6
 
-if(angka1 > angka2 && angka3 > angka4) {
-    print("memenuhi kriteria")
+if(number1 > number2 && number3 > number4) {
+    print("meet the criteria")
 } else {
-    print("tidak memenuhi kriteria")
+    print("does not meet the criteria")
 }
+
+
+struct Digit {
+    var number: Int
+    init() {
+        number = 7
+    }
+}
+
+let number = Digit.init()
+print("number = \(number.number)")
